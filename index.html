@@ -1,0 +1,706 @@
+<!-- 17 Oct 2022 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tyndale Clone</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- for icon -->
+        <link href="./assets/imgs/icons/favicon.ico" rel="icon" type="text/ico" sizes="16x16"/>
+        <!-- fontawesome css1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- bootstrap css1 js1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <!-- jQuery UI css1 js1 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- swiperjs css1 js1 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+        <!-- own css1 js1 -->
+        <link href="./css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!-- Start Intro Section -->
+        <header id="intro-section" class="my-page-scroll-check">
+            <!-- start navbar section -->
+            <nav class="w-100 navbar navbar-expand-lg navbar-dark justify-content-between position-fixed start-0 top-0">
+                <a href="./index.html" class="navbar-brand">tyndale.</a>
+
+                <button class="navbar-toggler my-hamburger-con" data-bs-toggle="collapse" data-bs-target="#header-navbar">
+                    <span class="my-lines"></span>
+                    <span class="my-lines"></span>
+                    <span class="my-lines"></span>
+                </button>
+
+                <div id="header-navbar" class="navbar-collapse collapse justify-content-between">
+                    <ul class="navbar-nav text-lg-center text-uppercase my-header-nav-section">
+                        <li class="nav-item"> <a href="#intro-section" class="nav-link">Intro</a> </li>
+                        <li class="nav-item"> <a href="#whatwedo-section" class="nav-link">What We Do</a> </li>
+                        <li class="nav-item"> <a href="#ourworks-section" class="nav-link">Our Works</a> </li>
+                        <li class="nav-item"> <a href="#getintouch-section" class="nav-link">Get In Touch</a> </li>
+
+                        <span class="nav-pointer"></span>
+                    </ul>
+
+                    <ul class="navbar-nav my-header-nav-icon my-3D-icon-con d-flex flex-row">
+                        <li class="nav-item facebook-3D-icon"> 
+                            <a href="#" target="_blank" class="nav-link"> 
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a> 
+                        </li>
+                        <li class="nav-item twitter-3D-icon"> 
+                            <a href="#" target="_blank" class="nav-link"> 
+                                <i class="fa-brands fa-twitter"></i>
+                            </a> 
+                        </li>
+                        <li class="nav-item instagram-3D-icon"> 
+                            <a href="#" target="_blank" class="nav-link"> 
+                                <i class="fa-brands fa-instagram"></i>
+                            </a> 
+                        </li>
+                        <li class="nav-item dribbble-3D-icon"> 
+                            <a href="#" target="_blank" class="nav-link"> 
+                                <i class="fa-brands fa-dribbble"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- end navbar section -->
+
+            <!-- start banner section -->
+            <section id="banner-section" class="py-5">
+                <div class="col-sm-10 col-11 text-white text-center mx-auto">
+                    <div class="my-row-1">
+                        <h1 class="display-2 mx-auto">We're a creative group of people who design influential brands and digital experiences</h1>
+                        <img src="./assets/imgs/intro-bg.jpg" alt="intro-bg" class="w-100 my-object-fit-cover"/>
+                    </div>
+    
+                    <div class="mx-auto my-row-2 my-scroll-con">
+                        <h3 class="mb-5">Hello, We Are Tyndale.</h3>
+                        <p class="lead lh-lg my-text-yellow fw-bold text-start my-scroll-tag">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.</p>
+                        
+                        <a href="#" class="d-none d-lg-block my-scroll-down-btn" data-go="header#intro-section">
+                            Scroll Down <i class="fa-solid fa-arrow-down-long"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- end banner section -->
+
+            <!-- start counter section -->
+            <section id="counter-section" class="py-5">
+                <div class="container">
+                    <div class="row text-white">
+                        <div class="col-xl-3 col-sm-6 col-11 mx-auto my-3 my-counter-box my-scroll-con">
+                            <h1 class="display-2 my-text-yellow my-scroll-num-counter" data-counter="30">0+</h1>
+                            <h4 class="fst-italic my-3 my-text-yellow my-scroll-tag">Happy Customers</h4>
+                            <p class="text-muted fw-bold my-scroll-tag">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 col-11 mx-auto my-3 my-counter-box my-scroll-con">
+                            <h1 class="display-2 my-text-yellow my-scroll-num-counter" data-counter="35">0+</h1>
+                            <h4 class="fst-italic my-3 my-text-yellow my-scroll-tag">Hours Work</h4>
+                            <p class="text-muted fw-bold my-scroll-tag">Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Eu scelerisque felis imperdiet proin fermentum leo. Cursus turpis massa tincidunt.</p>
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 col-11 mx-auto my-3 my-counter-box my-scroll-con">
+                            <h1 class="display-2 my-text-yellow my-scroll-num-counter" data-counter="41">0+</h1>
+                            <h4 class="fst-italic my-3 my-text-yellow my-scroll-tag">Coffee Drinks</h4>
+                            <p class="text-muted fw-bold my-scroll-tag">Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Est velit egestas dui id ornare. Leo urna molestie at elementum.</p>
+                        </div>
+
+                        <div class="col-xl-3 col-sm-6 col-11 mx-auto my-3 my-counter-box my-scroll-con">
+                            <h1 class="display-2 my-text-yellow my-scroll-num-counter" data-counter="38">0+</h1>
+                            <h4 class="fst-italic my-3 my-text-yellow my-scroll-tag">Completed Projects</h4>
+                            <p class="text-muted fw-bold my-scroll-tag">Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. Quis risus sed vulputate odio ut. Lectus arcu bibendum at varius vel eu facilisis.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end coutner section -->
+        </header>
+        <!-- End Intro Section -->
+
+        <!-- Start What We Do Section -->
+        <section id="whatwedo-section" class="py-5 my-page-scroll-check">
+            <div class="container">
+                <div class="my-title-con">
+                    <h6 class="my-title">What We Do</h6>
+                    <h1 class="display-4 my-subtitle">We’ve got everything you need to launch and grow your business</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-11 mx-auto my-4 my-scroll-con">
+                        <div class="my-card-ct">
+                            <div class="my-card-ct-header my-scroll-tag">
+                                <i class="fa-solid fa-brain"></i>
+                                <h3 class="my-card-ct-title">Product Design</h3>
+
+                                <span class="connect-point my-scroll-tag">
+                                    <span class="connecter">
+                                        <span class="connect-point"></span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="my-card-ct-body my-scroll-tag">
+                                <p class="lh-lg">Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint aliquam rhoncus elit.</p>
+                                <span class="connect-point"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-11 mx-auto my-4 my-scroll-con">
+                        <div class="my-card-ct">
+                            <div class="my-card-ct-header my-scroll-tag">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <h3 class="my-card-ct-title">Branding</h3>
+
+                                <span class="connect-point my-scroll-tag">
+                                    <span class="connecter">
+                                        <span class="connect-point"></span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="my-card-ct-body my-scroll-tag">
+                                <p class="lh-lg">Nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est. Quis risus sed vulputate odio ut. Lectus arcu bibendum at varius vel. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque. In nulla posuere sollicitudin aliquam ultrices.</p>
+                                <span class="connect-point"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-11 mx-auto my-4 my-scroll-con">
+                        <div class="my-card-ct">
+                            <div class="my-card-ct-header my-scroll-tag">
+                                <i class="fa-solid fa-mug-saucer"></i>
+                                <h3 class="my-card-ct-title">Frontend Development</h3>
+
+                                <span class="connect-point my-scroll-tag">
+                                    <span class="connecter">
+                                        <span class="connect-point"></span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="my-card-ct-body my-scroll-tag">
+                                <p class="lh-lg">Eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Eu scelerisque felis imperdiet proin fermentum leo. Cursus turpis massa tincidunt dui. Quis commodo odio aenean sed adipiscing diam donec adipiscing. Congue mauris rhoncus elit.</p>
+                                <span class="connect-point"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-11 mx-auto my-4 my-scroll-con">
+                        <div class="my-card-ct">
+                            <div class="my-card-ct-header my-scroll-tag">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <h3 class="my-card-ct-title">UX Research</h3>
+
+                                <span class="connect-point my-scroll-tag">
+                                    <span class="connecter">
+                                        <span class="connect-point"></span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="my-card-ct-body my-scroll-tag">
+                                <p class="lh-lg">Nemo cupiditate ab quibusdam quaerat impedit magni. Earum suscipit ipsum laudantium. Quo delectus est. Maiores voluptas ab sit natus veritatis ut. Debitis nulla cumque veritatis. Sunt suscipit voluptas ipsa in tempora esse soluta sint donec adipiscing.</p>
+                                <span class="connect-point"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-11 mx-auto my-4 my-scroll-con">
+                        <div class="my-card-ct">
+                            <div class="my-card-ct-header my-scroll-tag">
+                                <i class="fa-solid fa-pen-nib"></i>
+                                <h3 class="my-card-ct-title">Illustration</h3>
+
+                                <span class="connect-point my-scroll-tag">
+                                    <span class="connecter">
+                                        <span class="connect-point"></span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="my-card-ct-body my-scroll-tag">
+                                <p class="lh-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis lectus magna fringilla urna. Lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. Sit amet aliquam.</p>
+                                <span class="connect-point"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-11 mx-auto my-4 my-scroll-con">
+                        <div class="my-card-ct">
+                            <div class="my-card-ct-header my-scroll-tag">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <h3 class="my-card-ct-title">E-Commerce</h3>
+
+                                <span class="connect-point my-scroll-tag">
+                                    <span class="connecter">
+                                        <span class="connect-point"></span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="my-card-ct-body my-scroll-tag">
+                                <p class="lh-lg">Nullam eget felis eget nunc. Adipiscing commodo elit at imperdiet dui accumsan. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin. Orci eu lobortis elementum nibh tellus. Tortor vitae purus faucibus ornare suspendisse.</p>
+                                <span class="connect-point"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End What We Do Section -->
+
+        <!-- Start Our Works Section -->
+        <section id="ourworks-section" class="py-5 my-page-scroll-check">
+            <div class="my-title-con">
+                <h6 class="my-title">Recent Works</h6>
+                <h1 class="display-4 my-subtitle">Here are some of our favorite projects we have done lately. Feel free to check them out.</h1>
+            </div>
+
+            <!-- start portfolio section -->
+            <section id="portfolio-section" class="py-5">
+                <div class="container">
+                    <div class="row g-0">
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Branding" data-subtitle="Coffee & Tulips" data-link="#">
+                                <img src="./assets/imgs/portfolio/tulips@2x.jpg" alt="tulips@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+        
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Frontend Design" data-subtitle="Minimalismo" data-link="#">
+                                <img src="./assets/imgs/portfolio/minimalismo@2x.jpg"
+                                alt="minimalismo@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+    
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Product Design" data-subtitle="Skaterboy" data-link="#">
+                                <img src="./assets/imgs/portfolio/skaterboy@2x.jpg"
+                                alt="skaterboy@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Frontend Design" data-subtitle="Rucksack" data-link="#">
+                                <img src="./assets/imgs/portfolio/rucksack@2x.jpg"
+                                alt="rucksack@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="E-Commerce" data-subtitle="Wooocraft" data-link="#">
+                                <img src="./assets/imgs/portfolio/woodcraft@2x.jpg"
+                                alt="woodcraft@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Product Design" data-subtitle="The Lamp" data-link="#">
+                                <img src="./assets/imgs/portfolio/lamp@2x.jpg"
+                                alt="lamp@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Frontend Design" data-subtitle="Grayscale" data-link="#">
+                                <img src="./assets/imgs/portfolio/grayscale@2x.jpg"
+                                alt="grayscale@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Branding" data-subtitle="Lady Shutterbug" data-link="#">
+                                <img src="./assets/imgs/portfolio/shutterbug@2x.jpg"
+                                alt="shutterbug@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 col-11 mx-auto my-scroll-con my-scroll-tag">
+                            <div class="my-port-box" data-title="Frontend Design" data-subtitle="Retro Cam" data-link="#">
+                                <img src="./assets/imgs/portfolio/fuji@2x.jpg"
+                                alt="fuji@2x" class="my-port-img"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end portfolio section-->
+
+            <!-- start clients outer section -->
+            <section id="clients-outer-section" class="py-5">
+                <div class="my-title-con">
+                    <h3 class="display-6 my-small-subtitle">We've had the priveledge with working <span class="d-md-block">with</span> some of the largest and most iconic <span class="d-md-block">brands</span></h3>
+                </div>
+
+                <div class="col-lg-9 col-11 mx-auto swiper-con my-scroll-con my-scroll-tag">
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/dropbox.svg" alt="dropbox"/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/atom.svg" alt="atom"/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/github.svg" alt="github"/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/redhat.svg" alt="redhat"/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/medium.svg" alt="medium"/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/messenger.svg" alt="messenger"/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/steam.svg" alt="steam"/>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="./assets/imgs/icons/clients/spotify.svg" alt="spotify"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination position-static"></div>
+                </div>
+            </section>
+            <!-- end clients outer section -->
+
+            <!-- start video-block section -->
+            <section id="video-block-section" class="py-5">
+                <div class="row g-0 my-vd-block-con">
+                    <div class="col-6">
+                        <img src="./assets/imgs/videoblock/video-bg-01.jpg" alt="video-bg-01" class="my-vd-block-img"/>
+                    </div>
+                    <div class="col-6">
+                        <img src="./assets/imgs/videoblock/video-bg-02.jpg" alt="video-bg-02" class="my-vd-block-img"/>
+                    </div>
+
+                    <div class="my-vd-block-btn-con">
+                        <button class="btn my-vd-block-btn" data-bs-toggle="modal" data-bs-target="#video-block-modal">
+                            <i class="fa-solid fa-play"></i>
+                        </button>
+
+                        <span class="my-vd-block-text">Watch Video</span>
+                    </div>
+                </div>
+            </section>
+            <!-- end video-block section -->
+
+            <!-- start testimonial section -->
+            <section id="testimonial-section" class="mx-auto py-5 my-scroll-con" style="max-width: 500px;">
+                <div id="testimonial" class="carousel slide text-white d-flex my-scroll-tag" data-bs-ride="carousel">
+                    <a href="#testimonial" class="carousel-control-prev position-static my-carousel-control" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+
+                    <div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="./assets/imgs/feedback/user-04.jpg" alt="user-04" width="60" height="60" class="rounded-circle my-object-fit-cover"/>
+        
+                                    <div class="ms-3">
+                                        <span class="d-block my-text-yellow my-name">Tim Cook</span>
+                                        <span class="d-block my-position">CEO, Apple</span>
+                                    </div>
+                                </div>
+        
+                                <p class="fs-6 lh-lg my-feedback-text">Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum. Laudantium quia consequatur molestias.</p>
+                            </div>
+        
+                            <div class="carousel-item">
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="./assets/imgs/feedback/user-05.jpg" alt="user-05" width="60" height="60" class="rounded-circle my-object-fit-cover"/>
+        
+                                    <div class="ms-3">
+                                        <span class="d-block my-text-yellow my-name">Sundar Pichai</span>
+                                        <span class="d-block my-position">CEO, Google</span>
+                                    </div>
+                                </div>
+    
+                                <p class="fs-6 lh-lg my-feedback-text">Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum. Laudantium quia consequatur molestias.</p>
+                            </div>
+        
+                            <div class="carousel-item">
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="./assets/imgs/feedback/user-06.jpg" alt="user-06" width="60" height="60" class="rounded-circle my-object-fit-cover"/>
+        
+                                    <div class="ms-3">
+                                        <span class="d-block my-text-yellow my-name">Satya Nadella</span>
+                                        <span class="d-block my-position">CEO, Microsoft</span>
+                                    </div>
+                                </div>
+    
+                                <p class="fs-6 lh-lg my-feedback-text">Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum. Laudantium quia consequatur molestias.</p>
+                            </div>
+        
+                            <div class="carousel-item">
+                                <div class="d-flex align-items-center mb-4">
+                                    <img src="./assets/imgs/feedback/user-08.jpg" alt="user-08" width="60" height="60" class="rounded-circle my-object-fit-cover"/>
+        
+                                    <div class="ms-3">
+                                        <span class="d-block my-text-yellow my-name">Jeff Bezos</span>
+                                        <span class="d-block my-position">CEO, Amazon</span>
+                                    </div>
+                                </div>
+    
+                                <p class="fs-6 lh-lg my-feedback-text">Molestiae incidunt consequatur quis ipsa autem nam sit enim magni. Voluptas tempore rem. Explicabo a quaerat sint autem dolore ducimus ut consequatur neque. Nisi dolores quaerat fuga rem nihil nostrum. Laudantium quia consequatur molestias.</p>
+                            </div>
+                        </div>
+    
+                        <ol class="carousel-indicators position-static">
+                            <li data-bs-target="#testimonial" data-bs-slide-to="0" class="active"></li>
+                            <li data-bs-target="#testimonial" data-bs-slide-to="1"></li>
+                            <li data-bs-target="#testimonial" data-bs-slide-to="2"></li>
+                            <li data-bs-target="#testimonial" data-bs-slide-to="3"></li>
+                        </ol>
+                    </div>        
+
+                    <a href="#testimonial" class="carousel-control-next position-static my-carousel-control" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </section>
+            <!-- end testimonial section -->
+        </section>
+        <!-- End Our Works Section -->
+
+        <!-- Start Get In Touch Section -->
+        <footer id="getintouch-section" class="py-5 my-page-scroll-check">
+            <div class="container">
+                <div class="my-title-con">
+                    <h6 class="my-title">Get In Touch</h6>
+                    <h1 class="display-4 my-subtitle">Do you have an idea or an epic project in mind? Let’s work together.</h1>
+                </div>
+
+                <!-- start email section -->
+                <div id="email-section" class="col-lg-6 col-md-8 col-sm-10 col-11 py-5 mx-auto text-center my-scroll-con my-scroll-tag">
+                    <p class="text-muted fs-4 my-4">Nunc interdum lacus sit amet orci. Vestibulum dapibus nunc ac augue. Fusce vel dui. In ac felis quis tortor malesuada pretium. Curabitur vestibulum aliquam leo. Quasi sed at voluptas corrupti eius distinctio.</p>
+                    
+                    <div class="d-grid">
+                        <button class="btn my-btn-outline-yellow btn-lg rounded-0 text-uppercase"><i class="fa-solid fa-envelope"></i> Write An Email</button>
+                    </div>
+                </div>
+                <!-- end email section -->
+
+                <!-- start contact us section -->
+                <div id="contact-us-section" class="row py-5 text-md-center">
+                    <div class="col-lg-4 col-11 mx-auto my-scroll-con my-scroll-tag">
+                        <h5 class="my-contact-us-title">Where To Find Us</h5>
+                        <address>1600 Amphitheatre Parkway Mountain View, California 94043 US</address>
+                    </div>
+
+                    <div class="col-lg-4 col-11 mx-auto my-scroll-con my-scroll-tag">
+                        <h5 class="my-contact-us-title">Follow Us</h5>
+                        
+                        <ul class="list-unstyled my-contact-us-list">
+                            <li>
+                                <a href="#" target="_blank">Facebook</a>
+                            </li>
+
+                            <li>
+                                <a href="#" target="_blank">Twitter</a>
+                            </li>
+
+                            <li>
+                                <a href="#" target="_blank">Instagram</a>
+                            </li>
+
+                            <li>
+                                <a href="#" target="_blank">Dribble</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-11 mx-auto my-scroll-con my-scroll-tag">
+                        <h5 class="my-contact-us-title">Contact Us</h5>
+                        
+                        <ul class="list-unstyled my-contact-us-list">
+                            <li>
+                                <a href="mailto:info@tyndale.com" target="_blank">info@tyndale.com</a>
+                            </li>
+
+                            <li>
+                                <a href="tel:1975432345" target="_blank">+197 543 2345</a>
+                            </li>
+
+                            <li>
+                                <a href="tel:1971239876" target="_blank">+197 123 9876</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end contact us section -->
+
+                <!-- start copyright section -->
+                <div id="copyright-section" class="my-scroll-con my-scroll-tag">
+                    <span class="d-block mb-3">&copy; Copyright Tyndale Clone 2022</span>
+                    <span class="d-flex align-items-center">
+                        Credit - <a href="https://www.styleshout.com/" target="_blank" class="my-copyright-link">StyleShout</a> 
+                        <span class="my-copyright-border"></span> 
+                        Code By <a href="https://github.com/bloneeee" target="_blank" class="my-copyright-link">BLone</a>
+                    </span>
+                </div>
+                <!-- end copyright section -->
+            </div>
+        </footer>
+        <!-- End Get In Touch Section -->
+
+        <!-- Start Go Up Section -->
+        <a href="#intro-section" class="d-none position-fixed my-go-up-btn">
+            <i class="fa-solid fa-angle-up"></i>
+            <span class="my-go-up-btn-text">Back To Top <span class="my-go-up-btn-border"></span> </span>
+        </a>
+        <!-- End Go Up Section -->
+
+        <!-- Start Show Img Section -->
+        <div class="my-show-img-bg d-none">
+            <div class="my-first-con">
+                <span class="my-num-con">0 / 0</span>
+
+                <div class="my-btn-con">
+                    <span class="btn my-zoom-btn" data-bs-title="Zoom In & Out" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip"> 
+                        <i class="fa-solid fa-magnifying-glass-plus"></i> 
+                        <i class="fa-solid fa-magnifying-glass-minus"></i> 
+                    </span>
+
+                    <span class="btn my-fullscreen-btn" data-bs-title="Toggle Fullscreen" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip"> 
+                        <i class="fa-solid fa-expand"></i> 
+                        <i class="fa-solid fa-compress"></i> 
+                    </span>
+
+                    <div class="dropdown">
+                        <span class="btn my-share-btn" data-bs-toggle="dropdown">  
+                            <span data-bs-title="Share" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip">
+                                <i class="fa-solid fa-share"></i>
+                            </span>
+                        </span>
+
+                        <ol class="dropdown-menu">
+                            <li> <a href="#" class="dropdown-item">Share On Facebook</a> </li>
+                            <li> <a href="#" class="dropdown-item">Tweet</a> </li>
+                            <li> <a href="#" class="dropdown-item">Pin it</a> </li>
+                            <li> <a href="#" class="dropdown-item">Download image</a> </li>
+                        </ol>
+                    </div>
+
+                    <span class="btn my-close-btn" data-bs-title="Close" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip"> 
+                        <i class="fa-solid fa-xmark"></i> 
+                    </span>
+                </div>
+            </div>
+
+            <div class="my-second-con">
+                <span class="btn my-show-img-prev-btn d-none">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </span>
+                
+                <div class="my-show-img-con my-touch-slider-con my-cr-grab" data-my-current="0" data-my-prev="0" data-my-idx="0" data-my-fun="finalShowImg(idx)">
+                    <div class="my-show-img-move my-touch-slider-move"></div>
+                </div>
+
+                <span class="btn my-show-img-next-btn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
+
+            <div class="my-third-con">
+                <h5 class="my-show-img-title"></h5>
+                <p class="my-show-img-para"></p>
+            </div>
+        </div>
+        <!-- End Show Img Section -->
+
+        <!-- Start Modal -->
+            <!-- start video-block-modal -->
+            <div class="modal" id="video-block-modal">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="btn btn-close" data-bs-dismiss="modal">
+                                <i class="fa-solid fa-xmark"></i> 
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="my-vd-con paused" data-my-volume-lvl="low">
+                                <video src="./assets/videos/video-block.mp4" class="my-vd"></video>
+
+                                <div class="my-vd-up-fun-con">
+                                    <button class="my-vd-speed-btn wide-btn">1x</button>
+
+                                    <button class="my-vd-mini-mode-btn">
+                                        <i class="fa-solid fa-maximize"></i>
+                                        <i class="fa-solid fa-minimize"></i>
+                                    </button>
+
+                                    <button class="my-vd-fullscreen-btn">
+                                        <i class="fa-solid fa-expand"></i>
+                                        <i class="fa-solid fa-compress"></i>
+                                    </button>
+
+                                    <div class="my-vd-volume-con ms-auto">
+                                        <button class="my-vd-volume-btn">
+                                            <i class="fa-solid fa-volume-xmark"></i>
+                                            <i class="fa-solid fa-volume-low"></i>
+                                            <i class="fa-solid fa-volume-high"></i>
+                                        </button>
+
+                                        <div class="my-vd-volume-range-con">
+                                            <div type="range" class="my-vd-volume-range"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="my-vd-down-fun-con">
+                                    <button class="my-vd-playpause-btn">
+                                        <i class="fa-solid fa-play"></i>
+                                        <i class="fa-solid fa-pause"></i>
+                                    </button>
+
+                                    <span class="my-vd-box my-vd-current-dur">00 : 00</span>
+
+                                    <div class="my-vd-progress-bar" style="flex-grow: 1;">
+                                        <span class="my-vd-pretend-progress"></span>
+                                        <span class="my-vd-real-progress"></span>
+                                    </div>
+
+                                    <span class="my-vd-box my-vd-total-dur"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end video-bloack-modal -->
+        <!-- End Modal -->
+        
+        <!-- bootstrap css1 js1 -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <!-- jQuery js1 -->
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" type="text/javascript"></script>
+        <!-- jQuery UI css1 js1 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- swiperjs css1 js1 -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <!-- own css1 js1 -->
+        <script src="./js/app.js"></script>
+    </body>
+</html>
