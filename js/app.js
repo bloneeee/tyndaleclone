@@ -1,5 +1,6 @@
 /* Start Array */
 
+// portfolio img
 const portImgArr = [
     {path: "./assets/imgs/portfolio/gallery/g-tulips.jpg", title: "Coffee & Tultips" , para: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, quia!"},
     
@@ -51,6 +52,12 @@ $(document).ready(function(){
               slidesPerView: 6
             },
         },
+
+        // auto play
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
     });
 
     // for to make text individual
@@ -65,7 +72,8 @@ $(document).ready(function(){
                 newSpanTag.attr("style", `${property}: ${0.03 * idx}s`);
                 newSpanTag.css("display","inline-block");
                 newSpanTag.text(value);
-                if(value === " ") newSpanTag.addClass("m-1")
+
+                if(value === " ") newSpanTag.addClass("mx-1")
 
                 $(newSpanTag).appendTo(tag);
             });
@@ -160,9 +168,9 @@ $(document).ready(function(){
 
     function tsCalcX(ts,idx){
         const tsCon = $(ts.closest(".my-touch-slider-con"));
-        const disXMove = -tsCon.innerWidth() * idx;
+        // const disXMove = -tsCon.innerWidth() * idx;
 
-        eval(tsCon.data("my-fun"))
+        eval(tsCon.data("my-fun"));
     }
 
     // for draggable
@@ -344,9 +352,7 @@ $(document).ready(function(){
             vd.volume = vd.muted ? 0 : 1;
         }
 
-        vdVolume.onclick = () => {
-            vdToggleMute();
-        }
+        vdVolume.addEventListener("click", () => vdToggleMute());
 
         $(vdVolumeRange).slider({
             min: 0,
@@ -356,7 +362,7 @@ $(document).ready(function(){
             orientation: "vertical",
             range: "max",
             slide: function(e,ui){
-                vd.volume = 1- ui.value;
+                vd.volume = 1 - ui.value;
             }
         });
     
@@ -430,27 +436,25 @@ $(document).ready(function(){
         $("#video-block-modal .my-vd-con .my-vd").get(0).pause();
     });
 
-
     // for scroll ani
     $(window).scroll(function(){
+        const scrollTopVal = $(this).scrollTop();
+
         // for page scroll check
         clearInterval(headerNavResult);
         $(".my-page-scroll-check").each((pageIdx,page) => {
             if(Math.floor(page.getBoundingClientRect().top) <= 0) {
                 headerNavLinks.each((linkIdx,link) => {
                     if(link.getAttribute("href").replace("#","") === page.id){
-                        toMovePointer(linkIdx,link,false);
+                        headerNavToMovePointer(linkIdx,link,false);
                     }
                 }); 
             }
         });
 
-        // for go up btn
-        if($(this).scrollTop() > 500){
-            $(".my-go-up-btn").removeClass("d-none");
-        }else{
-            $(".my-go-up-btn").addClass("d-none");
-        }
+        // for scroll percent counter
+        const currentPercent = (scrollTopVal * 100) / ($(document).height() - $(window).height());
+        $(".my-scroll-percent-counter").css("width", currentPercent + "%");
 
         // for to add scrolled-active
         $(".my-scroll-con").each((idx,tag) => {
@@ -465,7 +469,7 @@ $(document).ready(function(){
                 const myScrollNumCounter = $(tag).find(".my-scroll-num-counter");
                 if(myScrollNumCounter.length > 0){
                     let scrollNumCounterRes = setInterval(() => {
-                        const totalCount = myScrollNumCounter.data("counter");
+                        const totalCount = myScrollNumCounter.data("myCounter");
                         const currentCount = +myScrollNumCounter.text().split("+")[0];
                         const insc = 1;
 
@@ -474,41 +478,50 @@ $(document).ready(function(){
                         }else{
                             clearInterval(scrollNumCounterRes);
                         }
-                    },300);
+                    },150);
                 }
             }
         });
+
+        // for go up btn
+        if(scrollTopVal > 500){
+            $(".my-go-up-btn").removeClass("d-none");
+        }else{
+            $(".my-go-up-btn").addClass("d-none");
+        }
     });
 
     /* Start Intro Section */
 
-    // for navbar
-    const hamburgerBtn = $(".my-hamburger-con");
-    hamburgerBtn.bind('click',()=>{
-        hamburgerBtn.toggleClass("clicked-active");
-        
-        if(hamburgerBtn.hasClass("clicked-active")){
-            clearInterval(headerNavResult);
-            headerNavLinks.each((idx,link) => {
-                if($(link).hasClass("clicked-active")){
-                    $(link).removeClass("clicked-active");
-                    toMovePointer(idx,link,false)
-                };
-            });
-        }
-    });
+    /* start navbar section */
 
     const headerNavSec = $(".my-header-nav-section");
     const headerNavLinks = headerNavSec.find(".nav-link");
     const headerNavPointer = headerNavSec.find(".nav-pointer");
 
-    headerNavLinks.each((idx,tag) => headerNavLinks.eq(idx).click(function(e){
+    // for hamburger btn
+    const hamburgerBtn = $(".my-hamburger-con");
+    hamburgerBtn.bind('click', ()=>{
+        hamburgerBtn.toggleClass("clicked-active");
+        
+        if(hamburgerBtn.hasClass("clicked-active")){
+            // clearInterval(headerNavResult);
+            headerNavLinks.each((idx,link) => {
+                if($(link).hasClass("clicked-active")){
+                    $(link).removeClass("clicked-active");
+                    headerNavToMovePointer(idx,link,false)
+                };
+            });
+        }
+    });
+
+    headerNavLinks.each((idx,tag) => $(tag).click(function(e){
         e.preventDefault();
-        toMovePointer(idx,tag,true);
+        headerNavToMovePointer(idx,tag,true);
     }));
 
     let headerNavResult;
-    function toMovePointer(idx,tag,linkChange){
+    function headerNavToMovePointer(idx,tag,linkChange){
         clearInterval(headerNavResult);
         headerNavResult = setInterval(function(){
             const clickedActive = headerNavSec.find(".clicked-active").get(0); 
@@ -526,6 +539,7 @@ $(document).ready(function(){
                 clickedIdx--;
             }
 
+            // to defined valueName & value AND to check mobile or laptop
             let val1Name, val2Name, val1, val2 = 0;
             let x = clickedIdx;
 
@@ -555,6 +569,7 @@ $(document).ready(function(){
             // console.log(val1Name,val1);
             // console.log(val2Name,val2)
 
+            // to make move ani
             if(clickedIdx < idx + 1){
                 headerNavPointer.css(val2Name, val2 + "px");
                 setTimeout(()=>{
@@ -567,18 +582,29 @@ $(document).ready(function(){
                 },80);
             }
 
+            // to toggle clicked-active
             if(clickedActive) clickedActive.classList.remove("clicked-active");
             headerNavLinks.eq(clickedIdx).addClass("clicked-active");
         },100);
     }
 
-    // headerNavLinks.eq(0).click();
+    headerNavLinks.eq(0).click();
 
-    /* End Intro Section */
+    /* end navbar section */
+
+    /* start banner section */
+
+    // for scroll down btn
+    $(".my-scroll-down-btn").click(function(){
+        const currentTag = $($(this).data()["myGo"]);
+        $(this).attr("href", "#" + currentTag.next().attr("id"));
+    });
+
+    /* end banner section */
 
     /* Start Our Works Section */
 
-    // for portfolio section 
+    /* start portfolio section */
 
     // for hover
     $(".my-port-box").hover(
@@ -587,8 +613,8 @@ $(document).ready(function(){
             $(this).append(` 
                 <div class="my-port-ani-con">
                     <div class="my-port-title-con">
-                        <h6 class="my-port-title">${$(this).data("title")}</h6>
-                        <h5 class="my-port-subtitle">${$(this).data()["subtitle"]}</h5>
+                        <h6 class="my-port-title">${$(this).data("myTitle")}</h6>
+                        <h5 class="my-port-subtitle">${$(this).data()["mySubtitle"]}</h5>
                     </div>
 
                     <div class="my-port-dot-con">
@@ -597,13 +623,17 @@ $(document).ready(function(){
                         <span class="dot"></span>
                     </div>
 
-                    <a href="${$(this).data().link}" class="btn my-port-btn">Project Link</a>
+                    <a href="${$(this).data().myLink}" class="btn my-port-btn">Project Link</a>
                 </div>`);
         },function(){
             $(this).removeClass("hovered-active");
             $(this).children(".my-port-ani-con").detach();
         }
     );
+
+    /* end portfolio section */
+
+    /* End Our Works Section */
 
     /* Start Show Img Section */
 
@@ -631,9 +661,6 @@ $(document).ready(function(){
             const newShowImgBox = $($.parseHTML("<div></div>"));
             newShowImgBox.addClass("my-show-img-box my-touch-slider-box");
 
-            const newShowImgDraggable =  $($.parseHTML("<div></div>"));
-            newShowImgDraggable.addClass("my-show-img-draggable");
-
             const newShowImg = $($.parseHTML("<img/>"));
             newShowImg.attr({
                 src: value.path,
@@ -641,9 +668,8 @@ $(document).ready(function(){
             });
             newShowImg.addClass("my-show-img");
 
-            newShowImgDraggable.append(newShowImg);
-            $(newShowImgDraggable).appendTo(newShowImgBox);
-            myShowImgMove.append(newShowImgBox);
+            newShowImgBox.append(newShowImg);
+            $(newShowImgBox).appendTo(myShowImgMove);
         });
 
         myShowImgCon.data().myIdx = targetIdx;
@@ -677,9 +703,10 @@ $(document).ready(function(){
         }
         
         const changeIdx = Array.from($(".my-show-img-box")).findIndex(value => value === changeShowImgBox.get(0));
-        finalShowImg(changeIdx);
 
         myShowImgCon.data().myIdx = changeIdx;
+
+        finalShowImg(changeIdx);
     }
 
     myShowImgPrev.click(() => toChangeShowImg(-1));
@@ -690,7 +717,7 @@ $(document).ready(function(){
         // for prev & next position
         const showImgBox = $(".my-show-img-box");
         const activeImg = showImgBox.eq(idx).find("img");
-        const disXBtn = (myShowImgBg.innerWidth() - activeImg.innerWidth()) / 4;
+        const disXBtn = (myShowImgCon.innerWidth() - activeImg.innerWidth()) / 4;
         myShowImgPrev.css("left", disXBtn + "px");
         myShowImgNext.css("right", disXBtn + "px");
 
@@ -748,16 +775,5 @@ $(document).ready(function(){
 
     /* End Show Img Section */
 
-    /* End Our Works Section */
-
-    // for scroll down btn
-
-    $(".my-scroll-down-btn").click(function(){
-        const currentTag = $($(this).data()["go"]);
-        $(this).attr("href", "#" + currentTag.next().attr("id"));
-    });
-
-    // reset scrollTop = 0 & removeClass .scrolled-active from .my-scroll-con
-    // $(window).scrollTop(0);
-    // $(".my-scroll-con").each((idx,tag) => $(tag).removeClass("scrolled-active"));
+    $(".my-loading").addClass("d-none");
 });
