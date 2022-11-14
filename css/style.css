@@ -383,6 +383,7 @@ body > .my-page-scroll-check:nth-child(even){
 
 .my-vd-con .my-vd-up-fun-con{
     top: 0;
+    z-index: 1;
     transform: translateY(-100%);
 }
 
