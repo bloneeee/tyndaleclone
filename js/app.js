@@ -205,7 +205,6 @@ $(document).ready(function(){
     }
 
     function dgMove(e,dg,move){
-        console.log(dgIsDragging, tsCanDraggable);
         if(dgIsDragging){
             let xyArr = dgToGetXY(e);
             move.css({
@@ -304,7 +303,6 @@ $(document).ready(function(){
         document.onkeydown = (e) => {
             if(!canVdKeyDown) return;
 
-            console.log(e.key.toLowerCase());
             const key = e.key.toLowerCase();
             const tagName = document.activeElement.tagName.toLowerCase();
 
@@ -637,6 +635,8 @@ $(document).ready(function(){
 
     /* end banner section */
 
+    /* End Intro Section */
+
     /* Start Our Works Section */
 
     /* start portfolio section */
@@ -724,8 +724,6 @@ $(document).ready(function(){
         // for zoom-out
         myShowImgBg.removeClass("zoom-in");
         tsCanDraggable = true;
-
-        document.onkeydown = null;
     });
 
     // for change (prev & next)
@@ -814,6 +812,6 @@ $(document).ready(function(){
 
     /* End Show Img Section */
 
-    // to display: none; for loading
+    // to add display: none; for loading
     $(".my-loading").addClass("d-none");
 });

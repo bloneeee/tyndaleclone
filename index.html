@@ -1,4 +1,4 @@
-<!-- 17 Oct 2022 -->
+<!-- BLone (17 Oct 2022 To 14 Nov 2022) -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -393,9 +393,11 @@
                     </div>
 
                     <div class="my-vd-block-btn-con">
-                        <button class="btn my-vd-block-btn" data-bs-toggle="modal" data-bs-target="#video-block-modal">
-                            <i class="fa-solid fa-play"></i>
-                        </button>
+                        <div data-bs-title="Click To Play Video" data-bs-toggle="tooltip"  data-bs-placement="top" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip">
+                            <button data-bs-toggle="modal" data-bs-target="#video-block-modal" class="btn my-vd-block-btn">
+                                <i class="fa-solid fa-play"></i>
+                            </button>
+                        </div>
 
                         <span class="my-vd-block-text">Watch Video</span>
                     </div>
@@ -585,22 +587,20 @@
                 <span class="my-num-con">0 / 0</span>
 
                 <div class="my-btn-con">
-                    <button class="btn my-zoom-btn" data-bs-title="Zoom In & Out" data-bs-toggle="tooltip" data-bs-placement="bottom"  data-bs-trigger="hover" data-bs-custom-class="custom-tooltip"> 
+                    <button class="d-none d-lg-block btn my-zoom-btn"> 
                         <i class="fa-solid fa-magnifying-glass-plus"></i> 
                         <i class="fa-solid fa-magnifying-glass-minus"></i> 
                     </button>
 
-                    <button class="btn my-fullscreen-btn" data-bs-title="Toggle Fullscreen" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip"> 
+                    <button class="btn my-fullscreen-btn">
                         <i class="fa-solid fa-expand"></i> 
                         <i class="fa-solid fa-compress"></i> 
                     </button>
 
-                    <div class="dropdown">
-                        <span data-bs-toggle="dropdown">  
-                            <button class="btn my-share-btn" data-bs-title="Share" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip">
-                                <i class="fa-solid fa-share"></i>
-                            </button>
-                        </span>
+                    <div class="dropdown">   
+                        <button class="btn my-share-btn" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-share"></i>
+                        </button>
 
                         <ol class="dropdown-menu">
                             <li> <a href="#" class="dropdown-item">Share On Facebook</a> </li>
@@ -610,7 +610,7 @@
                         </ol>
                     </div>
 
-                    <button class="btn my-close-btn" data-bs-title="Close" data-bs-toggle="tooltip"  data-bs-placement="bottom" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip"> 
+                    <button class="btn my-close-btn"> 
                         <i class="fa-solid fa-xmark"></i> 
                     </button>
                 </div>
@@ -686,7 +686,7 @@
 
                                         <button class="my-vd-speed-btn wide-btn">1x</button>
 
-                                        <button class="my-vd-mini-mode-btn">
+                                        <button class="d-none d-lg-block my-vd-mini-mode-btn">
                                             <i class="fa-solid fa-maximize"></i>
                                             <i class="fa-solid fa-minimize"></i>
                                         </button>
@@ -706,7 +706,7 @@
         <!-- End Modal -->
 
         <!-- Start Loading Section -->
-        <div class="vw-100 vh-100 d-flex justify-content-center align-items-center position-fixed start-0 top-0 my-loading" style="background-color: #000; z-index: 3000;">
+        <div class="vw-100 vh-100 d-flex justify-content-center align-items-center position-fixed start-0 top-0 my-loading" style="background-color: #000; z-index: 2000;">
             <div class="spinner-grow" style="background-color: var(--c-y);"></div>
         </div>
         <!-- End Loading Section -->

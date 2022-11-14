@@ -20,11 +20,11 @@
     background-color: var(--c-y);
 }
 
-body, body > .my-page-scroll-check{
+body{
     overflow-x: hidden;
 }
 
-footer.my-page-scroll-check{
+body > .my-page-scroll-check{
     overflow: hidden;
 }
 
@@ -231,7 +231,7 @@ body > .my-page-scroll-check:nth-child(even){
 
 .my-card-ct > *{
     background-color: rgb(25,25,25);
-    color: #666;
+    color: #444;
     padding: 1rem;
     position: relative;
 }
@@ -288,7 +288,7 @@ body > .my-page-scroll-check:nth-child(even){
 .my-card-ct-body{
     text-align: justify;
     padding-top: 2rem;
-    border-left: 4px solid #666;
+    border-left: 4px solid #444;
 }
 
 .my-card-ct-body .connect-point{
@@ -301,7 +301,12 @@ body > .my-page-scroll-check:nth-child(even){
 /* start tooltip */
 
 .custom-tooltip{
-    --bs-tooltip-zindex: 2000;
+    --bs-tooltip-bg: #222;
+    --bs-tooltip-color: var(--c-y);
+    --bs-tooltip-opacity: 1;
+    --bs-tooltip-zindex: 1;
+
+    letter-spacing: 2px;
 }
 
 /* end tooltip */
@@ -427,7 +432,7 @@ body > .my-page-scroll-check:nth-child(even){
 .my-vd-con .my-vd-box{
     background-color: #000;
     color: var(--c-y);
-    padding: 3px 5px;
+    padding: 5px 10px;
 
     font-size: 13px;
     font-weight: bold;
@@ -1222,7 +1227,8 @@ body > .my-page-scroll-check:nth-child(even){
     bottom: 0;
 }
 
-#ourworks-section #video-block-section .my-vd-block-btn-con > *{
+#ourworks-section #video-block-section .my-vd-block-btn,
+#ourworks-section #video-block-section .my-vd-block-text{
     background-color: #000;
 }
 
