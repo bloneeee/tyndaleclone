@@ -39,7 +39,7 @@ $(document).ready(function(){
         // If we need pagination
         pagination: {
             el: '.swiper-pagination',
-            clickable: true,
+            clickable: true
         },
         
         slidesPerView: 4,
@@ -50,14 +50,14 @@ $(document).ready(function(){
             },
             1024: {
               slidesPerView: 6
-            },
+            }
         },
 
         // auto play
         autoplay: {
             delay: 3000,
-            disableOnInteraction: false,
-        },
+            disableOnInteraction: false
+        }
     });
 
     // for to make text individual
@@ -179,32 +179,36 @@ $(document).ready(function(){
         dgs.each((idx,dg) => {
             dg.addEventListener("dragstart", (e) => e.preventDefault());
 
-            dg.addEventListener("touchstart", (e) => dgStart());
-            dg.addEventListener("touchend", (e) => dgEnd());
+            dg.addEventListener("touchstart", (e) => dgStart(dg));
+            dg.addEventListener("touchend", (e) => dgEnd(dg));
             dg.addEventListener("touchmove", (e) => dgMove(e,dg,move));
     
-            dg.addEventListener("mousedown", (e) => dgStart());
-            dg.addEventListener("mouseup", (e) => dgEnd());
-            dg.addEventListener("mouseleave", (e) => dgEnd());
+            dg.addEventListener("mousedown", (e) => dgStart(dg));
+            dg.addEventListener("mouseup", (e) => dgEnd(dg));
+            dg.addEventListener("mouseleave", (e) => dgEnd(dg));
             dg.addEventListener("mousemove", (e) => dgMove(e,dg,move));
         });
     }
 
-    function dgStart(){
+    function dgStart(dg){
         dgIsDragging = true;
     }
 
-    function dgEnd(){
+    function dgEnd(dg){
         dgIsDragging = false;
     }
 
     function dgMove(e,dg,move){
         if(dgIsDragging && !tsCanDraggable){
+            $(dg).addClass("my-cr-grabbing");
+
             let xyArr = dgToGetXY(e);
             move.css({
                 left: xyArr.x,
                 top: xyArr.y
             });
+        }else{
+            $(dg).removeClass("my-cr-grabbing");
         }
     }
 
@@ -359,8 +363,15 @@ $(document).ready(function(){
             max: 1,
             value: 0.5,
             step: 0.1,
+
+            cursor: "grab",
+            start: function(){
+                cursor: "grabbing"
+            },
+
             orientation: "vertical",
             range: "max",
+
             slide: function(e,ui){
                 vd.volume = 1 - ui.value;
             }
@@ -432,11 +443,21 @@ $(document).ready(function(){
         }
     });
 
-    $("#video-block-modal .btn-close").click(function(){
-        $("#video-block-modal .my-vd-con .my-vd").get(0).pause();
+    const vdBlockModal = $("#video-block-modal");
+    const vdBlockModalClose = vdBlockModal.find(".btn-close");
+    vdBlockModalClose.click(function(){
+        // for music pause
+        vdBlockModal.find(".my-vd").get(0).pause();
+
+        // for exit mini mode
+        const myVdCon = vdBlockModal.find(".my-vd-con");
+        if(myVdCon.hasClass("mini-mode")){
+            document.exitPictureInPicture();
+        }
     });
 
     // for scroll ani
+    let pageScrollingRs;
     $(window).scroll(function(){
         const scrollTopVal = $(this).scrollTop();
 
@@ -452,9 +473,23 @@ $(document).ready(function(){
             }
         });
 
-        // for scroll percent counter
-        const currentPercent = (scrollTopVal * 100) / ($(document).height() - $(window).height());
-        $(".my-scroll-percent-counter").css("width", currentPercent + "%");
+        // for page scroll progress
+        clearInterval(pageScrollingRs);
+        $(".my-page-scroll-progress").addClass("scrolling");
+        pageScrollingRs = setTimeout(() => {
+            $(".my-page-scroll-progress").removeClass("scrolling");
+        },5000);
+
+        const currentPer = Math.floor((scrollTopVal * 100) / ($(document).height() - $(window).height()));
+        $(".my-page-scroll-progress-text").text(currentPer + "%");
+        $(".my-page-scroll-progress-liquid").css("--current-per", currentPer + "%");
+
+        // for go up btn
+        if(scrollTopVal > 500){
+            $(".my-go-up-btn").removeClass("d-none");
+        }else{
+            $(".my-go-up-btn").addClass("d-none");
+        }
 
         // for to add scrolled-active
         $(".my-scroll-con").each((idx,tag) => {
@@ -482,13 +517,6 @@ $(document).ready(function(){
                 }
             }
         });
-
-        // for go up btn
-        if(scrollTopVal > 500){
-            $(".my-go-up-btn").removeClass("d-none");
-        }else{
-            $(".my-go-up-btn").addClass("d-none");
-        }
     });
 
     /* Start Intro Section */
@@ -683,8 +711,10 @@ $(document).ready(function(){
         myShowImgBg.addClass("d-none");
         myShowImgMove.html("");
 
+        // for exit fullsreen
         if(document.fullscreenElement) document.exitFullscreen();
         
+        // for zoom-out
         myShowImgBg.removeClass("zoom-in");
         tsCanDraggable = true;
     });

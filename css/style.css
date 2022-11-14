@@ -343,6 +343,10 @@ body > .my-page-scroll-check:nth-child(even){
 .my-vd-con{
     max-width: 800px;
     max-height: 800px;
+
+    display: flex;
+    align-items: stretch;
+
     user-select: none;
     overflow: hidden;
     position: relative;
@@ -350,12 +354,11 @@ body > .my-page-scroll-check:nth-child(even){
 
 .my-vd-con .my-vd{
     width: 100%;
-    height: 100%;
 }
 
 .my-vd-con .my-vd-up-fun-con,
 .my-vd-con .my-vd-down-fun-con{
-    background-color: rgba(25,25,25,0.5);
+    background-color: rgba(25,25,25,0.4);
     padding: 10px;
 
     display: flex;
@@ -419,7 +422,7 @@ body > .my-page-scroll-check:nth-child(even){
 } 
 
 .my-vd-con .my-vd-box{
-    background-color: #111;
+    background-color: #000;
     color: var(--c-y);
     padding: 5px 10px;
 
@@ -432,7 +435,7 @@ body > .my-page-scroll-check:nth-child(even){
 .my-vd-con .my-vd-progress-bar{
     width: 100%;
     height: 6px;
-    background-color: #111;
+    background-color: #000;
     border-radius: 10px;
 
     position: relative;
@@ -449,7 +452,7 @@ body > .my-page-scroll-check:nth-child(even){
 }
 
 .my-vd-con .my-vd-pretend-progress{
-    background-color: #333;
+    background-color: #f4f4f4;
     display: none;
 }
 
@@ -1270,10 +1273,12 @@ body > .my-page-scroll-check:nth-child(even){
     background-color: rgba(25,25,25,0.5);
     padding: 0.5rem;
     border-radius: 0.5rem;
+    text-align: justify;
+
     position: relative;
 
     opacity: 0;
-    transform: translateY(-5%);
+    transform: translateY(-10%);
     transition: all 0.25s linear;
 }
 
@@ -1373,7 +1378,7 @@ body > .my-page-scroll-check:nth-child(even){
 
 #getintouch-section #copyright-section .my-copyright-link{
     color: #fff;
-    text-underline-offset: 3px;
+    text-underline-offset: 5px;
     margin-left: 5px;
 }
 
@@ -1384,6 +1389,62 @@ body > .my-page-scroll-check:nth-child(even){
 /* end copyright section */
 
 /* End Get In Touch Sectin */
+
+/* Start Page Scroll Progress Section */
+
+.my-page-scroll-progress{
+    border-radius: 25% 50%;
+    box-shadow: 0 0 3px 3px #000;
+
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    z-index: 10;
+
+    opacity: 0;
+    transform: translate(-100%, 100%);
+    transition: all 0.5s linear;
+}
+
+.my-page-scroll-progress.scrolling{
+    opacity: 1;
+    transform: translate(0%);
+}
+
+.my-page-scroll-progress-text{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(25,25,25);
+    color: var(--c-y);
+
+    display: block;
+    border-radius: inherit;
+
+    font-size: 12px;
+
+    text-align: center;
+    line-height: 40px;
+
+    position: relative;
+    z-index: 1;
+}
+
+.my-page-scroll-progress-liquid{
+    --current-per: 0%;
+    background-image: conic-gradient(
+        var(--c-y) var(--current-per),
+        transparent var(--current-per)
+    );
+    border-radius: inherit;
+
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    top: -3px;
+    bottom: -3px;
+}
+
+/* End Page Scroll Progress Section */
 
 /* Start Go Up Btn Section */
 
