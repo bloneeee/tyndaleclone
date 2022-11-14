@@ -359,11 +359,6 @@ body > .my-page-scroll-check:nth-child(even){
 .my-vd-con .my-vd-up-fun-con,
 .my-vd-con .my-vd-down-fun-con{
     background-color: rgba(25,25,25,0.4);
-    padding: 10px;
-
-    display: flex;
-    align-items: center;
-    grid-gap: 1rem;
 
     position: absolute;
     left: 0;
@@ -371,6 +366,14 @@ body > .my-page-scroll-check:nth-child(even){
 
     opacity: 0;
     transition: all 0.25s linear;
+}
+
+.my-vd-con .my-vd-up-fun-con,
+.my-vd-con .my-vd-down-fun-con > .my-rows{
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    grid-gap: 1rem;
 }
 
 .my-vd-con .my-vd-up-fun-con{
@@ -424,7 +427,7 @@ body > .my-page-scroll-check:nth-child(even){
 .my-vd-con .my-vd-box{
     background-color: #000;
     color: var(--c-y);
-    padding: 5px 10px;
+    padding: 3px 5px;
 
     font-size: 13px;
     font-weight: bold;
@@ -506,6 +509,7 @@ body > .my-page-scroll-check:nth-child(even){
     position: absolute;
     left: 50%;
     bottom: -15px;
+    z-index: 1;
     transform: translate(-50%, 100%);
 
     display: none;
@@ -1390,16 +1394,20 @@ body > .my-page-scroll-check:nth-child(even){
 
 /* End Get In Touch Sectin */
 
+.my-page-scroll-progress,
+.my-go-up-btn{
+    position: fixed;
+    bottom: 25px;
+    z-index: 10;
+}
+
 /* Start Page Scroll Progress Section */
 
 .my-page-scroll-progress{
     border-radius: 25% 50%;
     box-shadow: 0 0 3px 3px #000;
-
-    position: fixed;
-    left: 15px;
-    bottom: 15px;
-    z-index: 10;
+    
+    left: 25px;
 
     opacity: 0;
     transform: translate(-100%, 100%);
@@ -1463,8 +1471,6 @@ body > .my-page-scroll-check:nth-child(even){
     align-items: center;
 
     right: 25px;
-    bottom: 25px;
-    z-index: 10;
 }
 
 .my-go-up-btn:hover{

@@ -191,24 +191,27 @@ $(document).ready(function(){
     }
 
     function dgStart(dg){
-        dgIsDragging = true;
+        if(!tsCanDraggable){
+            dgIsDragging = true;
+            $(dg).addClass("my-cr-grabbing");
+        }
     }
 
     function dgEnd(dg){
-        dgIsDragging = false;
+        if(!tsCanDraggable){
+            dgIsDragging = false;
+            $(dg).removeClass("my-cr-grabbing");
+        }
     }
 
     function dgMove(e,dg,move){
-        if(dgIsDragging && !tsCanDraggable){
-            $(dg).addClass("my-cr-grabbing");
-
+        console.log(dgIsDragging, tsCanDraggable);
+        if(dgIsDragging){
             let xyArr = dgToGetXY(e);
             move.css({
                 left: xyArr.x,
                 top: xyArr.y
             });
-        }else{
-            $(dg).removeClass("my-cr-grabbing");
         }
     }
 
@@ -267,6 +270,9 @@ $(document).ready(function(){
     }
 
     // for video
+    let canVdKeyDown = false;
+    $("#video-block-section .my-vd-block-btn").click(() => canVdKeyDown = true);
+
     $(".my-vd-con").each((idx,value) => {
         const vd = value.querySelector("video");
         const vdPlayPause = value.querySelector(".my-vd-playpause-btn");
@@ -296,6 +302,9 @@ $(document).ready(function(){
 
         // for keydown in document
         document.onkeydown = (e) => {
+            if(!canVdKeyDown) return;
+
+            console.log(e.key.toLowerCase());
             const key = e.key.toLowerCase();
             const tagName = document.activeElement.tagName.toLowerCase();
 
@@ -324,7 +333,7 @@ $(document).ready(function(){
                     vdSkip(+5);
                     break;
             }
-        }
+        };
         
         // for play & pause
         function vdTogglePlayPause(){
@@ -363,11 +372,6 @@ $(document).ready(function(){
             max: 1,
             value: 0.5,
             step: 0.1,
-
-            cursor: "grab",
-            start: function(){
-                cursor: "grabbing"
-            },
 
             orientation: "vertical",
             range: "max",
@@ -446,6 +450,9 @@ $(document).ready(function(){
     const vdBlockModal = $("#video-block-modal");
     const vdBlockModalClose = vdBlockModal.find(".btn-close");
     vdBlockModalClose.click(function(){
+        // for vd keydown
+        canVdKeyDown = false;
+
         // for music pause
         vdBlockModal.find(".my-vd").get(0).pause();
 
@@ -717,6 +724,8 @@ $(document).ready(function(){
         // for zoom-out
         myShowImgBg.removeClass("zoom-in");
         tsCanDraggable = true;
+
+        document.onkeydown = null;
     });
 
     // for change (prev & next)
@@ -805,5 +814,6 @@ $(document).ready(function(){
 
     /* End Show Img Section */
 
+    // to display: none; for loading
     $(".my-loading").addClass("d-none");
 });

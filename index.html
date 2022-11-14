@@ -573,7 +573,7 @@
         <!-- End Page Scroll Progress Section -->
 
         <!-- Start Go Up Section -->
-        <a href="#intro-section" class="d-none position-fixed my-go-up-btn">
+        <a href="#intro-section" class="d-none my-go-up-btn">
             <i class="fa-solid fa-angle-up"></i>
             <span class="my-go-up-btn-text">Back To Top <span class="my-go-up-btn-border"></span> </span>
         </a>
@@ -653,18 +653,6 @@
                                 <video src="./assets/videos/video-block.mp4" class="my-vd"></video>
 
                                 <div class="my-vd-up-fun-con">
-                                    <button class="my-vd-speed-btn wide-btn">1x</button>
-
-                                    <button class="my-vd-mini-mode-btn">
-                                        <i class="fa-solid fa-maximize"></i>
-                                        <i class="fa-solid fa-minimize"></i>
-                                    </button>
-
-                                    <button class="my-vd-fullscreen-btn">
-                                        <i class="fa-solid fa-expand"></i>
-                                        <i class="fa-solid fa-compress"></i>
-                                    </button>
-
                                     <div class="my-vd-volume-con ms-auto">
                                         <button class="my-vd-volume-btn">
                                             <i class="fa-solid fa-volume-xmark"></i>
@@ -679,19 +667,35 @@
                                 </div>
 
                                 <div class="my-vd-down-fun-con">
-                                    <button class="my-vd-playpause-btn">
-                                        <i class="fa-solid fa-play"></i>
-                                        <i class="fa-solid fa-pause"></i>
-                                    </button>
+                                    <div class="my-rows my-row-1">
+                                        <span class="my-vd-box my-vd-current-dur">00 : 00</span>
 
-                                    <span class="my-vd-box my-vd-current-dur">00 : 00</span>
+                                        <div class="my-vd-progress-bar" style="flex-grow: 1;">
+                                            <span class="my-vd-pretend-progress"></span>
+                                            <span class="my-vd-real-progress"></span>
+                                        </div>
 
-                                    <div class="my-vd-progress-bar" style="flex-grow: 1;">
-                                        <span class="my-vd-pretend-progress"></span>
-                                        <span class="my-vd-real-progress"></span>
+                                        <span class="my-vd-box my-vd-total-dur"></span>
                                     </div>
 
-                                    <span class="my-vd-box my-vd-total-dur"></span>
+                                    <div class="my-rows my-row-2">
+                                        <button class="my-vd-playpause-btn wide-btn me-auto">
+                                            <i class="fa-solid fa-play"></i>
+                                            <i class="fa-solid fa-pause"></i>
+                                        </button>
+
+                                        <button class="my-vd-speed-btn wide-btn">1x</button>
+
+                                        <button class="my-vd-mini-mode-btn">
+                                            <i class="fa-solid fa-maximize"></i>
+                                            <i class="fa-solid fa-minimize"></i>
+                                        </button>
+
+                                        <button class="my-vd-fullscreen-btn">
+                                            <i class="fa-solid fa-expand"></i>
+                                            <i class="fa-solid fa-compress"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
